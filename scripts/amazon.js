@@ -1,4 +1,4 @@
-const product =[{
+/*const product =[{
   image: 'images/products/athletic-cotton-socks-6-pairs.jpg',
   name: 'Black and Gray Athletic Cotton Socks - 6 Pairs',
   rating: {
@@ -23,32 +23,40 @@ const product =[{
     count: 56
   },
   priceCents: 799
-}];
+}, {
+  image: 'images/products/black-2-slot-toaster.jpg',
+  name: '2 Slot Toaster - Black',
+  rating: {
+    stars: 5,
+    count: 2197
+  },
+  priceCents: 1899
+}];*/
 
-let productHTML = '';
+let productsHTML = '';
 
-product.forEach((product) => {
-  productHTML += `
+products.forEach((products) => {
+  productsHTML += `
           <div class="product-container">
           <div class="product-image-container">
             <img class="product-image"
-              src="${product.image}">
+              src="${products.image}">
           </div>
 
           <div class="product-name limit-text-to-2-lines">
-            ${product.name}
+            ${products.name}
           </div>
 
           <div class="product-rating-container">
             <img class="product-rating-stars"
-              src="images/ratings/rating-${product.rating.stars * 10}.png">
+              src="images/ratings/rating-${products.rating.stars * 10}.png">
             <div class="product-rating-count link-primary">
-              ${product.rating.count}
+              ${products.rating.count}
             </div>
           </div>
 
           <div class="product-price">
-            $${(product.priceCents/100).toFixed(2)}
+            $${(products.priceCents/100).toFixed(2)}
           </div>
 
           <div class="product-quantity-container">
@@ -80,6 +88,6 @@ product.forEach((product) => {
 
 })
 
-console.log(productHTML);
+console.log(productsHTML);
 
-document.querySelector('.js-products-grid').innerHTML = productHTML;
+document.querySelector('.js-products-grid').innerHTML = productsHTML;
